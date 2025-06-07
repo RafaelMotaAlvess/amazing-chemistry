@@ -9,3 +9,9 @@ export const container = style({
 
   backgroundColor: theme.color.dark['4'],
 });
+
+export const image = style({
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+});
