@@ -1,33 +1,42 @@
-import { createGlobalTheme, globalStyle } from '@vanilla-extract/css'
+import { createGlobalTheme, globalStyle } from '@vanilla-extract/css';
 
-export const theme = createGlobalTheme("#root", {
+export const theme = createGlobalTheme('#root', {
   color: {
     dark: {
-      "1": "#4C4C4C",
-      "2": "#1E1E1E",
-      "3": "#1A1A1A",
-      "4": "#121212",
-      
+      '1': '#4C4C4C',
+      '2': '#1E1E1E',
+      '3': '#1A1A1A',
+      '4': '#121212',
+
       text: {
-        primary: "#FFFFFF",
-        secondary: "#BBBBBB",
+        primary: '#FFFFFF',
+        secondary: '#BBBBBB',
       },
-      
+
       contrast: {
-        primary: "#FFFFFF",
-      }
+        primary: '#FFFFFF',
+      },
     },
   },
   typography: {
-    fontFamily: '"Outfit", sans-serif'
-  }
-})
+    fontFamily: '"Outfit", sans-serif',
+  },
+  effect: {
+    boxShadow: {
+      default: '0px 0px 4px rgba(9, 9, 11, 0.25)',
+    },
+  },
+});
 
 globalStyle('html, body', {
-  margin: 0
-})
+  width: '100%',
+  height: '100vh',
+});
 
 globalStyle('*', {
+  margin: 0,
+  padding: 0,
   boxSizing: 'border-box',
-  fontFamily: theme.typography.fontFamily
-})
+  fontFamily: theme.typography.fontFamily,
+  fontSize: 16,
+});

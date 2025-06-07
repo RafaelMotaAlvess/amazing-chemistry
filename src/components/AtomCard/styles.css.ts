@@ -11,13 +11,15 @@ export const container = style({
 
   borderRadius: 4,
   border: `1px solid ${theme.color.dark['1']}`,
-  
+
   backgroundColor: theme.color.dark['2'],
-  
+
   color: theme.color.dark.text.secondary,
 
   userSelect: 'none',
   cursor: 'pointer',
+
+  filter: theme.effect.boxShadow.default,
 });
 
 export const content = style({
@@ -29,7 +31,7 @@ export const content = style({
   alignItems: 'center',
   justifyContent: 'center',
 
-  fontSize: 14
+  fontSize: 14,
 });
 
 export const symbol = style({
@@ -45,4 +47,4 @@ export const atomicNumber = style({
   right: 8,
 
   fontSize: 14,
-})
+});

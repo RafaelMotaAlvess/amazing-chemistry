@@ -1,10 +1,15 @@
-import { container, content, symbol as symbolStyle, atomicNumber as atomicNumberStyle } from "./styles.css";
+import {
+  container,
+  content,
+  symbol as symbolStyle,
+  atomicNumber as atomicNumberStyle,
+} from './styles.css';
 
-type AtomCardProps = {
+interface AtomCardProps {
   symbol: string;
   name: string;
   atomicNumber: number;
-};
+}
 
 export function AtomCard({ symbol, name, atomicNumber }: AtomCardProps) {
   return (

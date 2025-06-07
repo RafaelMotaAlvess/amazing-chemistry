@@ -1,11 +1,12 @@
-import { AtomCard } from "./components/AtomCard"
+import { AtomCard } from './components';
+import { container } from './styles.css';
 
 function App() {
   return (
-    <div>
-      <AtomCard symbol="H" name="Hidrogênio" atomicNumber={1}/>
-    </div>
-  )
+    <main className={container}>
+      <AtomCard symbol='H' name='Hidrogênio' atomicNumber={1} />
+    </main>
+  );
 }
 
-export default App
+export default App;
