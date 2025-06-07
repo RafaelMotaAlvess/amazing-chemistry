@@ -19,7 +19,7 @@ export const container = style({
   userSelect: 'none',
   cursor: 'pointer',
 
-  filter: theme.effect.boxShadow.default,
+  filter: theme.effect.dropShadow.default,
 });
 
 export const content = style({

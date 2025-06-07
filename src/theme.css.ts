@@ -22,7 +22,7 @@ export const theme = createGlobalTheme('#root', {
     fontFamily: '"Outfit", sans-serif',
   },
   effect: {
-    boxShadow: {
+    dropShadow: {
       default: '0px 0px 4px rgba(246, 244, 244, 0.75)',
     },
   },
