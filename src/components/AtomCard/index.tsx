@@ -13,7 +13,7 @@ interface AtomCardProps {
 
 export function AtomCard({ symbol, name, atomicNumber }: AtomCardProps) {
   return (
-    <div className={container}>
+    <div className={container} title={name}>
       <div className={content}>
         <span className={symbolStyle}>{symbol}</span>
         <span>{name}</span>
