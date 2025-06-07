@@ -10,6 +10,13 @@ export const container = style({
   backgroundColor: theme.color.dark['4'],
 });
 
+export const achievementButtonWrapper = style({
+  zIndex: 9,
+  position: 'absolute',
+  top: 20,
+  left: 20,
+});
+
 export const image = style({
   position: 'absolute',
   bottom: 0,
