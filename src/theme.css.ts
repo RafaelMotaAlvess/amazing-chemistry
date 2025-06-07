@@ -23,7 +23,7 @@ export const theme = createGlobalTheme('#root', {
   },
   effect: {
     boxShadow: {
-      default: '0px 0px 4px rgba(9, 9, 11, 0.25)',
+      default: '0px 0px 4px rgba(246, 244, 244, 0.75)',
     },
   },
 });
@@ -38,5 +38,4 @@ globalStyle('*', {
   padding: 0,
   boxSizing: 'border-box',
   fontFamily: theme.typography.fontFamily,
-  fontSize: 16,
 });
