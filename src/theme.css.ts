@@ -1,6 +1,6 @@
 import { createGlobalTheme, globalStyle } from '@vanilla-extract/css';
 
-export const theme = createGlobalTheme('#root', {
+export const theme = createGlobalTheme('#root, .ReactModalPortal', {
   color: {
     dark: {
       '1': '#4C4C4C',
