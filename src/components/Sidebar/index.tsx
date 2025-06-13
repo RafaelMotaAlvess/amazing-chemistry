@@ -8,7 +8,7 @@ export function Sidebar() {
 
   const renderAtoms = useMemo(
     () =>
-      Array(6)
+      Array(1)
         .fill(0)
         .map((_, index) => (
           <AtomCard key={index} atomicNumber={1} name='Hidrogênio' symbol='H' />

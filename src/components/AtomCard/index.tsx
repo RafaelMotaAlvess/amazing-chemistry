@@ -1,9 +1,12 @@
+import { useCallback, useState } from 'react';
 import {
   container,
   content,
   symbol as symbolStyle,
   atomicNumber as atomicNumberStyle,
+  badgeWrapper,
 } from './styles.css';
+import { Badge } from '../Badge';
 
 interface AtomCardProps {
   symbol: string;
@@ -12,8 +15,23 @@ interface AtomCardProps {
 }
 
 export function AtomCard({ symbol, name, atomicNumber }: AtomCardProps) {
+  const [selections, setSelections] = useState<number>(1);
+
+  const onSelection = useCallback(() => {
+    setSelections(selection => selection + 1);
+  }, []);
+
   return (
-    <button type='button' className={container} title={name}>
+    <button
+      type='button'
+      title={name}
+      className={container}
+      onClick={onSelection}
+    >
+      <div className={badgeWrapper}>
+        <Badge clicks={selections} />
+      </div>
+
       <div className={content}>
         <span className={symbolStyle}>{symbol}</span>
         <span>{name}</span>
