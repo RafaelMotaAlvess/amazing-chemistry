@@ -1,43 +1,46 @@
-import { style } from '@vanilla-extract/css';
-import { theme } from '../../theme.css';
+import { style } from "@vanilla-extract/css";
+import { theme } from "../../theme.css";
 
 export const overlay = style({
   zIndex: 9999,
 
-  position: 'fixed',
+  position: "fixed",
 
-  display: 'flex',
+  display: "flex",
 
-  width: '100%',
-  height: '100vh',
+  width: "100%",
+  height: "100vh",
 
-  justifyContent: 'center',
-  alignItems: 'center',
+  justifyContent: "center",
+  alignItems: "center",
 
   inset: 0,
 
-  border: 'none',
+  border: "none",
+
+  backgroundColor: "rgba(0, 0, 0, 0.3)",
+  backdropFilter: "blur(3px)",
 });
 
 export const container = style({});
 
 export const content = style({
-  overflowY: 'auto',
+  overflowY: "auto",
   width: 764,
   height: 512,
 
-  padding: '20px 32px',
+  padding: "20px 32px",
   gap: 16,
 
-  position: 'relative',
+  position: "relative",
 
-  display: 'flex',
-  flexDirection: 'column',
+  display: "flex",
+  flexDirection: "column",
 
   borderRadius: 16,
-  border: `1px solid ${theme.color.dark['1']}`,
+  border: `1px solid ${theme.color.dark["1"]}`,
 
-  backgroundColor: theme.color.dark['2'],
+  backgroundColor: theme.color.dark["2"],
 
   color: theme.color.dark.text.secondary,
 
@@ -45,26 +48,26 @@ export const content = style({
 });
 
 export const closeButton = style({
-  position: 'absolute',
+  position: "absolute",
   top: 12,
   left: 12,
 
   width: 32,
   height: 32,
 
-  cursor: 'pointer',
+  cursor: "pointer",
 
-  display: 'flex',
+  display: "flex",
 
-  justifyContent: 'center',
-  alignItems: 'center',
+  justifyContent: "center",
+  alignItems: "center",
 
   borderRadius: 999,
-  border: `1px solid ${theme.color.dark['1']}`,
+  border: `1px solid ${theme.color.dark["1"]}`,
 
-  backgroundColor: theme.color.dark['2'],
+  backgroundColor: theme.color.dark["2"],
 
-  ':hover': {
+  ":hover": {
     opacity: 0.9,
   },
 });
@@ -73,16 +76,16 @@ export const title = style({
   fontSize: 32,
   fontWeight: 500,
 
-  textAlign: 'center',
+  textAlign: "center",
 
   color: theme.color.dark.text.primary,
 });
 
 export const achievements = style({
-  display: 'flex',
-  flexWrap: 'wrap',
+  display: "flex",
+  flexWrap: "wrap",
 
-  justifyContent: 'center',
+  justifyContent: "center",
 
   gap: 12,
 });
