@@ -23,6 +23,7 @@ function App() {
         src={IMAGE_BACKGROUND}
         alt='Imagem de fundo'
         title='Imagem de fundo'
+        draggable='false'
       />
 
       <AchievementModal>{renderAchievements}</AchievementModal>
