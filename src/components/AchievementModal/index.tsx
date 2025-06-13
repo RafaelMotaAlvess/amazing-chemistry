@@ -28,7 +28,7 @@ export function AchievementModal({ children, onClose }: AchievementModalProps) {
       shouldCloseOnEsc
       shouldCloseOnOverlayClick
       ariaHideApp={false}
-      isOpen={!isOpen}
+      isOpen={isOpen}
       onRequestClose={handleClose}
       overlayClassName={overlay}
       className={container}
