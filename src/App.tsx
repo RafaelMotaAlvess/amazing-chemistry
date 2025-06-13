@@ -1,7 +1,12 @@
 import { useMemo } from "react";
 import { IMAGE_BACKGROUND } from "./assets";
-import { Achievement, AchievementButton, AchievementModal } from "./components";
-import { useModal } from "./hooks";
+import {
+  Achievement,
+  AchievementButton,
+  AchievementModal,
+  Sidebar,
+} from "./components";
+import { useModal } from "./hooks/useModal";
 import { achievementButtonWrapper, container, image } from "./styles.css";
 
 function App() {
@@ -29,6 +34,8 @@ function App() {
       />
 
       <AchievementModal>{renderAchievements}</AchievementModal>
+
+      <Sidebar />
     </main>
   );
 }

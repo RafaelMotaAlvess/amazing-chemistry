@@ -16,10 +16,14 @@ export const container = style({
 
   color: theme.color.dark.text.secondary,
 
-  userSelect: 'none',
   cursor: 'pointer',
+  outline: 'none',
 
   filter: theme.effect.dropShadow.default,
+
+  ':hover': {
+    opacity: 0.9,
+  },
 });
 
 export const content = style({
