@@ -8,10 +8,15 @@ export function Sidebar() {
 
   const renderAtoms = useMemo(
     () =>
-      Array(1)
+      Array(2)
         .fill(0)
         .map((_, index) => (
-          <AtomCard key={index} atomicNumber={1} name='Hidrogênio' symbol='H' />
+          <AtomCard
+            key={index}
+            atomicNumber={index ? 8 : 1}
+            name={index ? 'Oxigênio' : 'Hidrogênio'}
+            symbol={index ? 'O' : 'H'}
+          />
         )),
     []
   );

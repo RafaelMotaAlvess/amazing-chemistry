@@ -1,21 +1,23 @@
-import { useMemo } from "react";
-import { IMAGE_BACKGROUND } from "./assets";
+import { useMemo } from 'react';
+import { IMAGE_BACKGROUND } from './assets';
 import {
   Achievement,
   AchievementButton,
   AchievementModal,
   Sidebar,
-} from "./components";
-import { useModal } from "./hooks/useModal";
-import { achievementButtonWrapper, container, image } from "./styles.css";
+} from './components';
+import { useModal } from './hooks/useModal';
+import { achievementButtonWrapper, container, image } from './styles.css';
 
 function App() {
   const { onOpen } = useModal();
   const renderAchievements = useMemo(
     () =>
-      Array(100)
+      Array(3)
         .fill(0)
-        .map((_, index) => <Achievement key={index} molecule="H2O" isLocked />),
+        .map((_, index) => (
+          <Achievement key={index} molecule='H2O' isLocked={!!index} />
+        )),
     []
   );
 
@@ -28,9 +30,9 @@ function App() {
       <img
         className={image}
         src={IMAGE_BACKGROUND}
-        alt="Imagem de fundo"
-        title="Imagem de fundo"
-        draggable="false"
+        alt='Imagem de fundo'
+        title='Imagem de fundo'
+        draggable='false'
       />
 
       <AchievementModal>{renderAchievements}</AchievementModal>
