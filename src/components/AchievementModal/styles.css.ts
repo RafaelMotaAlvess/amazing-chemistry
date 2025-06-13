@@ -22,7 +22,10 @@ export const overlay = style({
   backdropFilter: "blur(3px)",
 });
 
-export const container = style({});
+export const container = style({
+  overflow: "hidden",
+  borderRadius: 16,
+});
 
 export const content = style({
   overflowY: "auto",
