@@ -1,5 +1,5 @@
-import { useNotification } from '../../hooks';
-import { Icon } from '../Icon';
+import { useNotification } from "../../hooks";
+import { Icon } from "../Icon";
 import {
   button,
   container,
@@ -7,7 +7,7 @@ import {
   containerExpanded,
   message,
   messageWrapper,
-} from './style.css';
+} from "./style.css";
 
 interface AchievementButtonProps {
   onClick?: () => void;
@@ -20,13 +20,13 @@ export function AchievementButton({ onClick }: AchievementButtonProps) {
 
   return (
     <div className={`${container} ${expand}`} onClick={onClick}>
-      <button type='button' className={button}>
-        <Icon name='trophy' size={36} />
+      <button type="button" className={button}>
+        <Icon name="trophy" size={36} />
       </button>
 
-        <div className={messageWrapper}>
-          <p className={message}>Você desbloqueou um novo elemento químico!</p>
-        </div>
+      <div className={messageWrapper}>
+        <p className={message}>Você desbloqueou um novo elemento químico!</p>
+      </div>
     </div>
   );
 }

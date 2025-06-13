@@ -1,6 +1,7 @@
-import ReactModal from 'react-modal';
-import type { PropsWithChildren } from 'react';
-import { useModal } from '../../hooks';
+import type { PropsWithChildren } from "react";
+import ReactModal from "react-modal";
+import { useModal } from "../../hooks";
+import { Icon } from "../Icon";
 import {
   achievements,
   closeButton,
@@ -8,8 +9,7 @@ import {
   content,
   overlay,
   title,
-} from './styles.css';
-import { Icon } from '../Icon';
+} from "./styles.css";
 
 interface AchievementModalProps extends Required<PropsWithChildren> {
   onClose?: () => void;
@@ -35,12 +35,12 @@ export function AchievementModal({ children, onClose }: AchievementModalProps) {
     >
       <div className={content}>
         <button
-          type='button'
-          title='Fechar'
+          type="button"
+          title="Fechar"
           className={closeButton}
           onClick={handleClose}
         >
-          <Icon name='close' />
+          <Icon name="close" />
         </button>
 
         <h3 className={title}>Sua coleção química</h3>

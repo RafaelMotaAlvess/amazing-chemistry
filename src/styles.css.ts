@@ -8,6 +8,8 @@ export const container = style({
   height: '100vh',
 
   backgroundColor: theme.color.dark['4'],
+
+  overflow: 'hidden',
 });
 
 export const achievementButtonWrapper = style({
