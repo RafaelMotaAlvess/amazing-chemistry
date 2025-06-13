@@ -13,12 +13,12 @@ interface AtomCardProps {
 
 export function AtomCard({ symbol, name, atomicNumber }: AtomCardProps) {
   return (
-    <div className={container} title={name}>
+    <button type='button' className={container} title={name}>
       <div className={content}>
         <span className={symbolStyle}>{symbol}</span>
         <span>{name}</span>
       </div>
       <span className={atomicNumberStyle}>{atomicNumber}</span>
-    </div>
+    </button>
   );
 }
