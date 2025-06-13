@@ -1,0 +1,118 @@
+{
+  "elements": [
+    {
+      "symbol": "H",
+      "name": "Hidrogênio",
+      "atomicNumber": 1,
+      "family": "hidrogenio"
+    },
+    {
+      "symbol": "Li",
+      "name": "Lítio",
+      "atomicNumber": 3,
+      "family": "metal_alcalino"
+    },
+    {
+      "symbol": "Na",
+      "name": "Sódio",
+      "atomicNumber": 11,
+      "family": "metal_alcalino"
+    },
+    {
+      "symbol": "K",
+      "name": "Potássio",
+      "atomicNumber": 19,
+      "family": "metal_alcalino"
+    },
+    {
+      "symbol": "Rb",
+      "name": "Rubídio",
+      "atomicNumber": 37,
+      "family": "metal_alcalino"
+    },
+    {
+      "symbol": "Cs",
+      "name": "Césio",
+      "atomicNumber": 55,
+      "family": "metal_alcalino"
+    },
+    {
+      "symbol": "Fr",
+      "name": "Frâncio",
+      "atomicNumber": 87,
+      "family": "metal_alcalino"
+    },
+    {
+      "symbol": "Be",
+      "name": "Berílio",
+      "atomicNumber": 4,
+      "family": "metal_alcalino_terroso"
+    },
+    {
+      "symbol": "Mg",
+      "name": "Magnésio",
+      "atomicNumber": 12,
+      "family": "metal_alcalino_terroso"
+    },
+    {
+      "symbol": "Ca",
+      "name": "Cálcio",
+      "atomicNumber": 20,
+      "family": "metal_alcalino_terroso"
+    },
+    {
+      "symbol": "Sr",
+      "name": "Estrôncio",
+      "atomicNumber": 38,
+      "family": "metal_alcalino_terroso"
+    },
+    {
+      "symbol": "Ba",
+      "name": "Bário",
+      "atomicNumber": 56,
+      "family": "metal_alcalino_terroso"
+    },
+    {
+      "symbol": "Ra",
+      "name": "Rádio",
+      "atomicNumber": 88,
+      "family": "metal_alcalino_terroso"
+    },
+    {
+      "symbol": "C",
+      "name": "Carbono",
+      "atomicNumber": 6,
+      "family": "ametal"
+    },
+    {
+      "symbol": "N",
+      "name": "Nitrogênio",
+      "atomicNumber": 7,
+      "family": "ametal"
+    },
+    {
+      "symbol": "O",
+      "name": "Oxigênio",
+      "atomicNumber": 8,
+      "family": "ametal"
+    },
+    {
+      "symbol": "P",
+      "name": "Fósforo",
+      "atomicNumber": 15,
+      "family": "ametal"
+    },
+    {
+      "symbol": "S",
+      "name": "Enxofre",
+      "atomicNumber": 16,
+      "family": "ametal"
+    },
+    {
+      "symbol": "Se",
+      "name": "Selênio",
+      "atomicNumber": 34,
+      "family": "ametal"
+    }
+  ]
+}

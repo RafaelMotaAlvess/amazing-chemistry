@@ -1,0 +1,155 @@
+{
+  "recipes": [
+    {
+      "inputs": [
+        "Na",
+        "Cl"
+      ],
+      "result": {
+        "name": "Cloreto de sódio",
+        "formula": "NaCl"
+      }
+    },
+    {
+      "inputs": [
+        "K",
+        "Br"
+      ],
+      "result": {
+        "name": "Brometo de potássio",
+        "formula": "KBr"
+      }
+    },
+    {
+      "inputs": [
+        "Ca",
+        "F",
+        "F"
+      ],
+      "result": {
+        "name": "Fluoreto de cálcio",
+        "formula": "CaF₂"
+      }
+    },
+    {
+      "inputs": [
+        "Mg",
+        "Cl",
+        "Cl"
+      ],
+      "result": {
+        "name": "Cloreto de magnésio",
+        "formula": "MgCl₂"
+      }
+    },
+    {
+      "inputs": [
+        "H",
+        "Cl"
+      ],
+      "result": {
+        "name": "Ácido clorídrico",
+        "formula": "HCl"
+      }
+    },
+    {
+      "inputs": [
+        "H",
+        "F"
+      ],
+      "result": {
+        "name": "Ácido fluorídrico",
+        "formula": "HF"
+      }
+    },
+    {
+      "inputs": [
+        "H",
+        "H",
+        "S"
+      ],
+      "result": {
+        "name": "Sulfeto de hidrogênio",
+        "formula": "H₂S"
+      }
+    },
+    {
+      "inputs": [
+        "Ca",
+        "O",
+        "H",
+        "H"
+      ],
+      "result": {
+        "name": "Hidróxido de cálcio",
+        "formula": "Ca(OH)₂"
+      }
+    },
+    {
+      "inputs": [
+        "Mg",
+        "O",
+        "H",
+        "H"
+      ],
+      "result": {
+        "name": "Hidróxido de magnésio",
+        "formula": "Mg(OH)₂"
+      }
+    },
+    {
+      "inputs": [
+        "K",
+        "O",
+        "H"
+      ],
+      "result": {
+        "name": "Hidróxido de potássio",
+        "formula": "KOH"
+      }
+    },
+    {
+      "inputs": [
+        "Na",
+        "Na",
+        "S",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "result": {
+        "name": "Sulfato de sódio",
+        "formula": "Na₂SO₄"
+      }
+    },
+    {
+      "inputs": [
+        "K",
+        "K",
+        "S",
+        "O",
+        "O",
+        "O",
+        "O"
+      ],
+      "result": {
+        "name": "Sulfato de potássio",
+        "formula": "K₂SO₄"
+      }
+    },
+    {
+      "inputs": [
+        "Ca",
+        "C",
+        "O",
+        "O",
+        "O"
+      ],
+      "result": {
+        "name": "Carbonato de cálcio",
+        "formula": "CaCO₃"
+      }
+    }
+  ]
+}
