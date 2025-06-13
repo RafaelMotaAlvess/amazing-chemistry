@@ -52,3 +52,12 @@ export const atomicNumber = style({
 
   fontSize: 14,
 });
+
+export const badgeWrapper = style({
+  position: 'absolute',
+  top: -12,
+  left: -12,
+
+  width: 'auto',
+  height: 'auto',
+});
