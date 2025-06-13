@@ -38,4 +38,6 @@ globalStyle('*', {
   padding: 0,
   boxSizing: 'border-box',
   fontFamily: theme.typography.fontFamily,
+
+  scrollbarColor: `${theme.color.dark['1']} transparent`,
 });
