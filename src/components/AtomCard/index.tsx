@@ -18,7 +18,10 @@ export function AtomCard({ symbol, name, atomicNumber }: AtomCardProps) {
   const [selections, setSelections] = useState<number>(1);
 
   const onSelection = useCallback(() => {
-    setSelections(selection => selection + 1);
+    const MAX_SELECTIONS = 100;
+    setSelections(selection =>
+      selection === MAX_SELECTIONS ? selection : selection + 1
+    );
   }, []);
 
   return (
