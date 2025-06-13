@@ -1,36 +1,10 @@
-import { createVar, keyframes, style } from '@vanilla-extract/css';
+import { createVar, style } from '@vanilla-extract/css';
 import { theme } from '../../theme.css';
 
 const messageWidth = createVar({
   syntax: '<width>',
   inherits: false,
   initialValue: '64px',
-});
-
-const expandKeyframes = keyframes({
-  '0%': {
-    vars: {
-      [messageWidth]: '64px',
-    },
-  },
-  '100%': {
-    vars: {
-      [messageWidth]: '400px',
-    },
-  },
-});
-
-const contractKeyframes = keyframes({
-  '0%': {
-    vars: {
-      [messageWidth]: '400px',
-    },
-  },
-  '100%': {
-    vars: {
-      [messageWidth]: '64px',
-    },
-  },
 });
 
 export const container = style({
@@ -109,12 +83,14 @@ export const messageWrapper = style({
     [messageWidth]: '64px',
   },
 
+  visibility: 'hidden',
+
+  transition: 'width 0.3s ease-in-out, visibility 0.3s ease-in-out',
+
   selectors: {
     [`${containerExpanded} &`]: {
-      animation: `${expandKeyframes} 0.3s ease-out forwards`,
-    },
-    [`${containerContracted} &`]: {
-      animation: `${contractKeyframes} 0.3s ease-in forwards`,
+      width: '400px',
+      visibility: 'visible',
     },
   },
 });
