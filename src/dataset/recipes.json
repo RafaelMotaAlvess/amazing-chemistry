@@ -1,6 +1,20 @@
 {
   "recipes": [
     {
+      "inputs": ["H", "H", "O"],
+      "result": {
+        "name": "Água",
+        "formula": "H²O"
+      }
+    },
+    {
+      "inputs": ["C", "O", "O"],
+      "result": {
+        "name": "Gás Carbônico",
+        "formula": "CO²"
+      }
+    },
+    {
       "inputs": ["Na", "Cl"],
       "result": {
         "name": "Cloreto de sódio",
@@ -18,14 +32,14 @@
       "inputs": ["Ca", "F", "F"],
       "result": {
         "name": "Fluoreto de cálcio",
-        "formula": "CaF₂"
+        "formula": "CaF²"
       }
     },
     {
       "inputs": ["Mg", "Cl", "Cl"],
       "result": {
         "name": "Cloreto de magnésio",
-        "formula": "MgCl₂"
+        "formula": "MgCl²"
       }
     },
     {
@@ -46,21 +60,21 @@
       "inputs": ["H", "H", "S"],
       "result": {
         "name": "Sulfeto de hidrogênio",
-        "formula": "H₂S"
+        "formula": "H²S"
       }
     },
     {
       "inputs": ["Ca", "O", "H", "H"],
       "result": {
         "name": "Hidróxido de cálcio",
-        "formula": "Ca(OH)₂"
+        "formula": "Ca(OH)²"
       }
     },
     {
       "inputs": ["Mg", "O", "H", "H"],
       "result": {
         "name": "Hidróxido de magnésio",
-        "formula": "Mg(OH)₂"
+        "formula": "Mg(OH)²"
       }
     },
     {
@@ -74,21 +88,21 @@
       "inputs": ["Na", "Na", "S", "O", "O", "O", "O"],
       "result": {
         "name": "Sulfato de sódio",
-        "formula": "Na₂SO₄"
+        "formula": "Na²SO⁴"
       }
     },
     {
       "inputs": ["K", "K", "S", "O", "O", "O", "O"],
       "result": {
         "name": "Sulfato de potássio",
-        "formula": "K₂SO₄"
+        "formula": "K²SO⁴"
       }
     },
     {
       "inputs": ["Ca", "C", "O", "O", "O"],
       "result": {
         "name": "Carbonato de cálcio",
-        "formula": "CaCO₃"
+        "formula": "CaCO³"
       }
     }
   ]

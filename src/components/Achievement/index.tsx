@@ -1,22 +1,28 @@
 import { LOCKED, SMOKE, WATER } from '../../assets';
+import type { Molecule } from '../../dataset';
 import { container, image, molecule as moleculeStyle } from './styles.css';
 
-type AchievementMolecule = 'H2O' | 'CO2';
-
 interface AchievementProps {
-  molecule: AchievementMolecule;
+  molecule: Molecule;
   isLocked?: boolean;
 }
 
 export function Achievement({ molecule, isLocked = true }: AchievementProps) {
-  const molecules: Record<AchievementMolecule, string> = {
-    H2O: 'H²O',
-    CO2: 'CO²',
-  };
-
-  const images: Record<AchievementMolecule, string> = {
-    CO2: SMOKE,
-    H2O: WATER,
+  const images: Record<Molecule, string> = {
+    'H²O': WATER,
+    'CO²': SMOKE,
+    NaCl: '',
+    KBr: '',
+    'CaF²': '',
+    'MgCl²': '',
+    HCl: '',
+    'H²S': '',
+    'Ca(OH)²': '',
+    'Mg(OH)²': '',
+    KOH: '',
+    'Na²SO⁴': '',
+    'K²SO⁴': '',
+    'CaCO³': '',
   };
 
   const label = isLocked ? 'Bloqueado' : images[molecule];
@@ -30,9 +36,7 @@ export function Achievement({ molecule, isLocked = true }: AchievementProps) {
         title={label}
       />
 
-      {!isLocked && (
-        <span className={moleculeStyle}>{molecules[molecule]}</span>
-      )}
+      {!isLocked && <span className={moleculeStyle}>{molecule}</span>}
     </div>
   );
 }

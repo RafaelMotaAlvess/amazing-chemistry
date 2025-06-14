@@ -8,16 +8,21 @@ import {
 } from './components';
 import { useModal } from './hooks/useModal';
 import { achievementButtonWrapper, container, image } from './styles.css';
+import { recipes } from './dataset/recipes.json';
+import type { Molecule } from './dataset';
 
 function App() {
   const { onOpen } = useModal();
+
   const renderAchievements = useMemo(
     () =>
-      Array(3)
-        .fill(0)
-        .map((_, index) => (
-          <Achievement key={index} molecule='H2O' isLocked={!!index} />
-        )),
+      recipes.map(recipe => (
+        <Achievement
+          key={recipe.result.formula}
+          molecule={recipe.result.formula as Molecule}
+          isLocked
+        />
+      )),
     []
   );
 
