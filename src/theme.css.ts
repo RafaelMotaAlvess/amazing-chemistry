@@ -40,4 +40,5 @@ globalStyle('*', {
   fontFamily: theme.typography.fontFamily,
 
   scrollbarColor: `${theme.color.dark['1']} transparent`,
+  scrollbarWidth: 'thin',
 });
