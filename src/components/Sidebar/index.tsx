@@ -9,16 +9,10 @@ export function Sidebar() {
   const { isOpen, onClose, onOpen } = useSidebar();
 
   const renderAtoms = useMemo(
-    () => elements
-      .sort((a, b) => a.atomicNumber - b.atomicNumber)
-      .map((element) => (
-          <AtomCard
-            key={element.symbol}
-            atomicNumber={element.atomicNumber}
-            name={element.name}
-            symbol={element.symbol}
-          />
-        )),
+    () =>
+      elements
+        .sort((a, b) => a.atomicNumber - b.atomicNumber)
+        .map(element => <AtomCard key={element.symbol} {...element} />),
     []
   );
 

@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, type MouseEvent } from 'react';
 import {
   container,
   content,
@@ -24,10 +24,10 @@ export function AtomCard({ symbol, name, atomicNumber }: AtomCardProps) {
     );
   }, []);
 
-  const decrementSelection = useCallback((e: React.MouseEvent) => {
-      e.preventDefault();
-      setSelections(selection => (selection > 1 ? selection - 1 : 1));
-    }, []);
+  const decrementSelection = useCallback((event: MouseEvent) => {
+    event.preventDefault();
+    setSelections(selection => (selection > 1 ? selection - 1 : 1));
+  }, []);
 
   return (
     <button
