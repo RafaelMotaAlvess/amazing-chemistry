@@ -24,6 +24,8 @@ export const container = style({
   ':hover': {
     opacity: 0.9,
   },
+
+  userSelect: 'none',
 });
 
 export const content = style({
