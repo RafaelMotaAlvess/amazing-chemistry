@@ -3,19 +3,20 @@ import { container, content, horizontalBar } from './styles.css';
 import { AtomCard } from '../AtomCard';
 import { useSidebar } from '../../hooks';
 
+import { elements } from '../../dataset';
+
 export function Sidebar() {
   const { isOpen, onClose, onOpen } = useSidebar();
 
   const renderAtoms = useMemo(
-    () =>
-      Array(2)
-        .fill(0)
-        .map((_, index) => (
+    () => elements
+      .sort((a, b) => a.atomicNumber - b.atomicNumber)
+      .map((element) => (
           <AtomCard
-            key={index}
-            atomicNumber={index ? 8 : 1}
-            name={index ? 'Oxigênio' : 'Hidrogênio'}
-            symbol={index ? 'O' : 'H'}
+            key={element.symbol}
+            atomicNumber={element.atomicNumber}
+            name={element.name}
+            symbol={element.symbol}
           />
         )),
     []
