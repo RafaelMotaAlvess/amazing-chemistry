@@ -24,7 +24,7 @@ export function AtomCard({ symbol, name, atomicNumber }: AtomCardProps) {
     );
   }, []);
 
-  const onContextMenu = useCallback((e: React.MouseEvent) => {
+  const decrementSelection = useCallback((e: React.MouseEvent) => {
       e.preventDefault();
       setSelections(selection => (selection > 1 ? selection - 1 : 1));
     }, []);
@@ -35,7 +35,7 @@ export function AtomCard({ symbol, name, atomicNumber }: AtomCardProps) {
       title={name}
       className={container}
       onClick={onSelection}
-      onContextMenu={onContextMenu}
+      onContextMenu={decrementSelection}
     >
       <div className={badgeWrapper}>
         <Badge clicks={selections} />
