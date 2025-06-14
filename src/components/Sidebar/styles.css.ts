@@ -121,3 +121,55 @@ export const helpButton = style({
     },
   },
 });
+
+export const helpPopover = style({
+  zIndex: 999,
+
+  position: 'absolute',
+  bottom: 52,
+  right: 52,
+
+  display: 'flex',
+  flexDirection: 'column',
+
+  width: 320,
+  height: 'auto',
+
+  padding: 12,
+
+  gap: 4,
+
+  color: theme.color.dark.text.secondary,
+
+  borderRadius: 4,
+  border: `1px solid ${theme.color.dark['1']}`,
+
+  backgroundColor: theme.color.dark['2'],
+
+  filter: theme.effect.dropShadow.default,
+
+  transition: 'opacity 0.3s ease-in-out',
+
+  selectors: {
+    '&[data-open="false"]': {
+      display: 'none',
+      opacity: 0,
+    },
+    '&[data-open="true"]': {
+      display: 'flex',
+      opacity: 1,
+    },
+  },
+});
+
+export const helpPopoverText = style({
+  fontSize: 14,
+  fontWeight: 400,
+});
+
+export const helpButtonBoldText = style({
+  fontSize: 14,
+  fontWeight: 'bold',
+
+  color: theme.color.dark.text.primary,
+});
