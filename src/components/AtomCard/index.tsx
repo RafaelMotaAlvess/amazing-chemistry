@@ -12,10 +12,16 @@ interface AtomCardProps {
   symbol: string;
   name: string;
   atomicNumber: number;
+  amount?: number;
 }
 
-export function AtomCard({ symbol, name, atomicNumber }: AtomCardProps) {
-  const [selections, setSelections] = useState<number>(1);
+export function AtomCard({
+  symbol,
+  name,
+  atomicNumber,
+  amount = 1,
+}: AtomCardProps) {
+  const [selections, setSelections] = useState<number>(amount);
 
   const onSelection = useCallback(() => {
     const MAX_SELECTIONS = 100;
