@@ -17,22 +17,21 @@ export function WorkspaceArea() {
   const { workspaceItems, updatePosition } = useWorkspace();
 
   const renderedAtoms = useMemo(() => {
-    return workspaceItems.map((item) => {
-      const { id, atomicNumber, amount } = item;
+    return workspaceItems.map(item => {
+      const { id, atomicNumber, amount, position } = item;
       const { name, symbol } = elementsByAtomicNumber[atomicNumber];
 
       return (
         <Rnd
-          key={item.id}
+          bounds='#workspace-area'
+          key={id}
           className={draggableItem}
-          bounds={'#workspace-area'}
-          position={item.position}
+          position={position}
           enableUserSelectHack={false}
           enableResizing={false}
-          onDragStop={(_, { x, y }) => updatePosition(item.id, { x, y })}
+          onDragStop={(_, { x, y }) => updatePosition(id, { x, y })}
         >
           <AtomCard
-            key={id}
             symbol={symbol}
             name={name}
             atomicNumber={atomicNumber}

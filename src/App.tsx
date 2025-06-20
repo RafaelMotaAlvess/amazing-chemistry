@@ -7,9 +7,8 @@ import {
   Sidebar,
   WorkspaceArea,
 } from './components';
-import type { Molecule } from './dataset';
-import { recipes } from './dataset/recipes.json';
-import { useModal } from './hooks/useModal';
+import { useModal } from './hooks';
+import { type Molecule, recipes } from './dataset';
 import { achievementButtonWrapper, container, image } from './styles.css';
 
 function App() {
@@ -17,7 +16,7 @@ function App() {
 
   const renderAchievements = useMemo(
     () =>
-      recipes.map((recipe) => (
+      recipes.map(recipe => (
         <Achievement
           key={recipe.result.formula}
           molecule={recipe.result.formula as Molecule}
@@ -42,6 +41,7 @@ function App() {
       />
 
       <WorkspaceArea />
+
       <Sidebar />
 
       <AchievementModal>{renderAchievements}</AchievementModal>
