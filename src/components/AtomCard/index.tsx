@@ -13,6 +13,7 @@ interface AtomCardProps {
   name: string;
   atomicNumber: number;
   amount?: number;
+  isLocked?: boolean;
 }
 
 export function AtomCard({
@@ -20,20 +21,27 @@ export function AtomCard({
   name,
   atomicNumber,
   amount = 1,
+  isLocked,
 }: AtomCardProps) {
   const [selections, setSelections] = useState<number>(amount);
 
   const onSelection = useCallback(() => {
+    if (isLocked) return;
     const MAX_SELECTIONS = 100;
     setSelections(selection =>
       selection === MAX_SELECTIONS ? selection : selection + 1
     );
-  }, []);
+  }, [isLocked]);
 
-  const decrementSelection = useCallback((event: MouseEvent) => {
-    event.preventDefault();
-    setSelections(selection => (selection > 1 ? selection - 1 : 1));
-  }, []);
+  const decrementSelection = useCallback(
+    (event: MouseEvent) => {
+      event.preventDefault();
+      if (isLocked) return;
+
+      setSelections((selection) => (selection > 1 ? selection - 1 : 1));
+    },
+    [isLocked]
+  );
 
   return (
     <button
