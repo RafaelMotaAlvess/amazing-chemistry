@@ -5,12 +5,12 @@ import {
   AchievementButton,
   AchievementModal,
   Sidebar,
+  WorkspaceArea,
 } from './components';
 import type { Molecule } from './dataset';
 import { recipes } from './dataset/recipes.json';
 import { useModal } from './hooks/useModal';
 import { achievementButtonWrapper, container, image } from './styles.css';
-import { WorkspaceArea } from './components/WorkspaceArea';
 
 function App() {
   const { onOpen } = useModal();
