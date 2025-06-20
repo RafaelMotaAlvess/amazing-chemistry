@@ -26,6 +26,14 @@ export const container = style({
   },
 
   userSelect: 'none',
+
+  selectors: {
+    '&:hover': {
+      scale: 1.05,
+    },
+  },
+
+  transition: 'scale 0.2s ease-in-out, opacity 0.2s ease-in-out',
 });
 
 export const content = style({
