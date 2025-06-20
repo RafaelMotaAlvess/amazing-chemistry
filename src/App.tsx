@@ -10,13 +10,14 @@ import type { Molecule } from './dataset';
 import { recipes } from './dataset/recipes.json';
 import { useModal } from './hooks/useModal';
 import { achievementButtonWrapper, container, image } from './styles.css';
+import { WorkspaceArea } from './components/WorkspaceArea';
 
 function App() {
   const { onOpen } = useModal();
 
   const renderAchievements = useMemo(
     () =>
-      recipes.map(recipe => (
+      recipes.map((recipe) => (
         <Achievement
           key={recipe.result.formula}
           molecule={recipe.result.formula as Molecule}
@@ -40,9 +41,10 @@ function App() {
         draggable='false'
       />
 
-      <AchievementModal>{renderAchievements}</AchievementModal>
-
+      <WorkspaceArea />
       <Sidebar />
+
+      <AchievementModal>{renderAchievements}</AchievementModal>
     </main>
   );
 }
