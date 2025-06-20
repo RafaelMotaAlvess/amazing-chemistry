@@ -1,12 +1,13 @@
-import { useCallback, useState, type MouseEvent } from 'react';
+import { useCallback, useRef, useState, type MouseEvent } from 'react';
+import { useWorkspace } from '../../hooks';
+import { Badge } from '../Badge';
 import {
+  atomicNumber as atomicNumberStyle,
+  badgeWrapper,
   container,
   content,
   symbol as symbolStyle,
-  atomicNumber as atomicNumberStyle,
-  badgeWrapper,
 } from './styles.css';
-import { Badge } from '../Badge';
 
 interface AtomCardProps {
   symbol: string;
@@ -25,10 +26,14 @@ export function AtomCard({
 }: AtomCardProps) {
   const [selections, setSelections] = useState<number>(amount);
 
+  const cardButton = useRef<HTMLButtonElement>(null);
+
+  const { addWorkspaceItem } = useWorkspace();
+
   const onSelection = useCallback(() => {
     if (isLocked) return;
     const MAX_SELECTIONS = 100;
-    setSelections(selection =>
+    setSelections((selection) =>
       selection === MAX_SELECTIONS ? selection : selection + 1
     );
   }, [isLocked]);
@@ -43,13 +48,27 @@ export function AtomCard({
     [isLocked]
   );
 
+  const onDragStart = useCallback(() => {
+    if (isLocked) return;
+
+    const { x = 0, y = 0 } = cardButton.current?.getBoundingClientRect() ?? {};
+    addWorkspaceItem({
+      atomicNumber,
+      amount: selections,
+      position: { x, y },
+    });
+  }, [addWorkspaceItem, atomicNumber, selections, isLocked]);
+
   return (
     <button
       type='button'
+      ref={cardButton}
       title={name}
       className={container}
       onClick={onSelection}
       onContextMenu={decrementSelection}
+      draggable={!isLocked}
+      onDragStart={onDragStart}
     >
       <div className={badgeWrapper}>
         <Badge clicks={selections} />
