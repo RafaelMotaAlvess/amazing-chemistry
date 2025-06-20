@@ -6,10 +6,10 @@ import {
   AchievementModal,
   Sidebar,
 } from './components';
+import type { Molecule } from './dataset';
+import { recipes } from './dataset/recipes.json';
 import { useModal } from './hooks/useModal';
 import { achievementButtonWrapper, container, image } from './styles.css';
-import { recipes } from './dataset/recipes.json';
-import type { Molecule } from './dataset';
 
 function App() {
   const { onOpen } = useModal();
