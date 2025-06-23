@@ -5,7 +5,7 @@ interface WorkspaceItemPosition {
   y: number;
 }
 
-interface WorkspaceItem {
+export interface WorkspaceItem {
   id: number;
   atomicNumber: number;
   amount: number;
