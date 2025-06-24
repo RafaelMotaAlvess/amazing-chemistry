@@ -15,14 +15,14 @@
       }
     },
     {
-      "inputs": ["Na", "Cl"],
+      "inputs": ["Cl", "Na"],
       "result": {
         "name": "Cloreto de sódio",
         "formula": "NaCl"
       }
     },
     {
-      "inputs": ["K", "Br"],
+      "inputs": ["Br", "K"],
       "result": {
         "name": "Brometo de potássio",
         "formula": "KBr"
@@ -36,21 +36,21 @@
       }
     },
     {
-      "inputs": ["Mg", "Cl", "Cl"],
+      "inputs": ["Cl", "Cl", "Mg"],
       "result": {
         "name": "Cloreto de magnésio",
         "formula": "MgCl²"
       }
     },
     {
-      "inputs": ["H", "Cl"],
+      "inputs": ["Cl", "H"],
       "result": {
         "name": "Ácido clorídrico",
         "formula": "HCl"
       }
     },
     {
-      "inputs": ["H", "F"],
+      "inputs": ["F", "H"],
       "result": {
         "name": "Ácido fluorídrico",
         "formula": "HF"
@@ -64,42 +64,42 @@
       }
     },
     {
-      "inputs": ["Ca", "O", "H", "H"],
+      "inputs": ["Ca", "H", "H", "O"],
       "result": {
         "name": "Hidróxido de cálcio",
         "formula": "Ca(OH)²"
       }
     },
     {
-      "inputs": ["Mg", "O", "H", "H"],
+      "inputs": ["H", "H", "Mg", "O"],
       "result": {
         "name": "Hidróxido de magnésio",
         "formula": "Mg(OH)²"
       }
     },
     {
-      "inputs": ["K", "O", "H"],
+      "inputs": ["H", "K", "O"],
       "result": {
         "name": "Hidróxido de potássio",
         "formula": "KOH"
       }
     },
     {
-      "inputs": ["Na", "Na", "S", "O", "O", "O", "O"],
+      "inputs": ["Na", "Na", "O", "O", "O", "O", "S"],
       "result": {
         "name": "Sulfato de sódio",
         "formula": "Na²SO⁴"
       }
     },
     {
-      "inputs": ["K", "K", "S", "O", "O", "O", "O"],
+      "inputs": ["K", "K", "O", "O", "O", "O", "S"],
       "result": {
         "name": "Sulfato de potássio",
         "formula": "K²SO⁴"
       }
     },
     {
-      "inputs": ["Ca", "C", "O", "O", "O"],
+      "inputs": ["C", "Ca", "O", "O", "O"],
       "result": {
         "name": "Carbonato de cálcio",
         "formula": "CaCO³"

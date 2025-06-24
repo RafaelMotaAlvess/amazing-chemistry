@@ -62,7 +62,9 @@ export function WorkspaceArea() {
           .fill(0)
           .map(() => secondElement.symbol);
 
-        const joinedSymbols = [...firstSymbols, ...secondSymbols];
+        const joinedSymbols = [...firstSymbols, ...secondSymbols].sort((a, b) =>
+          a.localeCompare(b)
+        );
 
         const recipe = recipes.find(recipe =>
           isEqual(recipe.inputs, joinedSymbols)
