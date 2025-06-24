@@ -1,5 +1,11 @@
-import { useCallback, useRef, useState, type MouseEvent } from 'react';
-import { useWorkspace } from '../../hooks';
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent,
+} from 'react';
+import { useNotification, useWorkspace } from '../../hooks';
 import { Badge } from '../Badge';
 import {
   atomicNumber as atomicNumberStyle,
@@ -28,12 +34,13 @@ export function AtomCard({
 
   const cardButton = useRef<HTMLButtonElement>(null);
 
+  const { isNotification } = useNotification();
   const { addWorkspaceItem } = useWorkspace();
 
   const onSelection = useCallback(() => {
     if (isLocked) return;
     const MAX_SELECTIONS = 100;
-    setSelections((selection) =>
+    setSelections(selection =>
       selection === MAX_SELECTIONS ? selection : selection + 1
     );
   }, [isLocked]);
@@ -43,7 +50,7 @@ export function AtomCard({
       event.preventDefault();
       if (isLocked) return;
 
-      setSelections((selection) => (selection > 1 ? selection - 1 : 1));
+      setSelections(selection => (selection > 1 ? selection - 1 : 1));
     },
     [isLocked]
   );
@@ -57,7 +64,11 @@ export function AtomCard({
       amount: selections,
       position: { x, y },
     });
-  }, [addWorkspaceItem, atomicNumber, selections, isLocked]);
+  }, [isLocked, atomicNumber, selections, addWorkspaceItem]);
+
+  useEffect(() => {
+    if (isNotification) setSelections(1);
+  }, [isNotification]);
 
   return (
     <button
