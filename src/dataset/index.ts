@@ -9,20 +9,20 @@ export interface ElementProps {
 }
 
 export type Molecule =
-  | 'H²O'
-  | 'CO²'
+  | 'H2O'
+  | 'CO2'
   | 'NaCl'
   | 'KBr'
-  | 'CaF²'
-  | 'MgCl²'
+  | 'CaF2'
+  | 'MgCl2'
   | 'HCl'
-  | 'H²S'
-  | 'Ca(OH)²'
-  | 'Mg(OH)²'
+  | 'H2S'
+  | 'Ca(OH)2'
+  | 'Mg(OH)2'
   | 'KOH'
-  | 'Na²SO⁴'
-  | 'K²SO⁴'
-  | 'CaCO³';
+  | 'Na2SO4'
+  | 'K2SO4'
+  | 'CaCO3';
 
 export interface RecipeProps {
   inputs: string[];

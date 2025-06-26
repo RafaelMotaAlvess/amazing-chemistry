@@ -7,22 +7,40 @@ interface AchievementProps {
   isLocked?: boolean;
 }
 
+function moleculeToComponent(molecule: Molecule): React.JSX.Element {
+  const texts = molecule.split(/\d/).filter(Boolean);
+  const numbers = molecule.split(/\D/).filter(Boolean);
+
+  return (
+    <span>
+      {texts.map((text, index) => {
+        return (
+          <span key={text + (numbers[index] ?? '')}>
+            {text}
+            <sub>{numbers[index]}</sub>
+          </span>
+        );
+      })}
+    </span>
+  );
+}
+
 export function Achievement({ molecule, isLocked = true }: AchievementProps) {
   const images: Record<Molecule, string> = {
-    'H²O': WATER,
-    'CO²': SMOKE,
+    H2O: WATER,
+    CO2: SMOKE,
     NaCl: '',
     KBr: '',
-    'CaF²': '',
-    'MgCl²': '',
+    CaF2: '',
+    MgCl2: '',
     HCl: '',
-    'H²S': '',
-    'Ca(OH)²': '',
-    'Mg(OH)²': '',
+    H2S: '',
+    'Ca(OH)2': '',
+    'Mg(OH)2': '',
     KOH: '',
-    'Na²SO⁴': '',
-    'K²SO⁴': '',
-    'CaCO³': '',
+    Na2SO4: '',
+    K2SO4: '',
+    CaCO3: '',
   };
 
   const label = isLocked ? 'Bloqueado' : images[molecule];
@@ -36,7 +54,9 @@ export function Achievement({ molecule, isLocked = true }: AchievementProps) {
         title={label}
       />
 
-      {!isLocked && <span className={moleculeStyle}>{molecule}</span>}
+      {!isLocked && (
+        <span className={moleculeStyle}>{moleculeToComponent(molecule)}</span>
+      )}
     </div>
   );
 }

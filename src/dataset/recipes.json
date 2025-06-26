@@ -4,14 +4,14 @@
       "inputs": ["H", "H", "O"],
       "result": {
         "name": "Água",
-        "formula": "H²O"
+        "formula": "H2O"
       }
     },
     {
       "inputs": ["C", "O", "O"],
       "result": {
         "name": "Gás Carbônico",
-        "formula": "CO²"
+        "formula": "CO2"
       }
     },
     {
@@ -32,14 +32,14 @@
       "inputs": ["Ca", "F", "F"],
       "result": {
         "name": "Fluoreto de cálcio",
-        "formula": "CaF²"
+        "formula": "CaF2"
       }
     },
     {
       "inputs": ["Cl", "Cl", "Mg"],
       "result": {
         "name": "Cloreto de magnésio",
-        "formula": "MgCl²"
+        "formula": "MgCl2"
       }
     },
     {
@@ -60,21 +60,21 @@
       "inputs": ["H", "H", "S"],
       "result": {
         "name": "Sulfeto de hidrogênio",
-        "formula": "H²S"
+        "formula": "H2S"
       }
     },
     {
       "inputs": ["Ca", "H", "H", "O", "O"],
       "result": {
         "name": "Hidróxido de cálcio",
-        "formula": "Ca(OH)²"
+        "formula": "Ca(OH)2"
       }
     },
     {
       "inputs": ["H", "H", "Mg", "O", "O"],
       "result": {
         "name": "Hidróxido de magnésio",
-        "formula": "Mg(OH)²"
+        "formula": "Mg(OH)2"
       }
     },
     {
@@ -88,21 +88,21 @@
       "inputs": ["Na", "Na", "O", "O", "O", "O", "S"],
       "result": {
         "name": "Sulfato de sódio",
-        "formula": "Na²SO⁴"
+        "formula": "Na2SO4"
       }
     },
     {
       "inputs": ["K", "K", "O", "O", "O", "O", "S"],
       "result": {
         "name": "Sulfato de potássio",
-        "formula": "K²SO⁴"
+        "formula": "K2SO4"
       }
     },
     {
       "inputs": ["C", "Ca", "O", "O", "O"],
       "result": {
         "name": "Carbonato de cálcio",
-        "formula": "CaCO³"
+        "formula": "CaCO3"
       }
     }
   ]
