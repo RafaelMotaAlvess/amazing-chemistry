@@ -64,14 +64,14 @@
       }
     },
     {
-      "inputs": ["Ca", "H", "H", "O"],
+      "inputs": ["Ca", "H", "H", "O", "O"],
       "result": {
         "name": "Hidróxido de cálcio",
         "formula": "Ca(OH)²"
       }
     },
     {
-      "inputs": ["H", "H", "Mg", "O"],
+      "inputs": ["H", "H", "Mg", "O", "O"],
       "result": {
         "name": "Hidróxido de magnésio",
         "formula": "Mg(OH)²"
