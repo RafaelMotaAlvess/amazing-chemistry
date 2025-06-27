@@ -34,12 +34,10 @@ export function WorkspaceArea() {
 
   const isOverlapping = useCallback(
     (rect1: WorkspaceItem, rect2: WorkspaceItem) =>
-      !(
-        rect1.position.x + ATOM_CARD_SIZE < rect2.position.x ||
-        rect2.position.x + ATOM_CARD_SIZE < rect1.position.x ||
-        rect1.position.y + ATOM_CARD_SIZE < rect2.position.y ||
-        rect2.position.y + ATOM_CARD_SIZE < rect1.position.y
-      ),
+      rect1.position.x + ATOM_CARD_SIZE >= rect2.position.x &&
+      rect2.position.x + ATOM_CARD_SIZE >= rect1.position.x &&
+      rect1.position.y + ATOM_CARD_SIZE >= rect2.position.y &&
+      rect2.position.y + ATOM_CARD_SIZE >= rect1.position.y,
     []
   );
 
