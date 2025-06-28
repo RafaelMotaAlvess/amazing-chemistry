@@ -16,6 +16,11 @@ import {
 import { AtomCard } from '../AtomCard';
 import { container, draggableItem } from './styles.css';
 
+interface JoinElementsProps {
+  currentRecipes: WorkspaceItem[][];
+  itemIds: number[];
+}
+
 const ATOM_CARD_SIZE = 92;
 
 const elementsByAtomicNumber = elements.reduce(
@@ -25,6 +30,49 @@ const elementsByAtomicNumber = elements.reduce(
   },
   {}
 );
+
+function getCurrentRecipesFromOverlaps(
+  overlapsElements: [WorkspaceItem, WorkspaceItem][]
+) {
+  const recipeSets = overlapsElements.reduce(
+    (acc: Array<Set<WorkspaceItem>>, [item1, item2]) => {
+      const existingRecipe = acc.find(
+        recipe => recipe.has(item1) || recipe.has(item2)
+      );
+
+      if (existingRecipe) {
+        existingRecipe.add(item1);
+        existingRecipe.add(item2);
+      } else {
+        acc.push(new Set([item1, item2]));
+      }
+      return acc;
+    },
+    []
+  );
+
+  const itemIds: number[] = [];
+
+  const normalizedRecipes = recipeSets.map(recipeSet =>
+    Array.from(recipeSet).reduce((acc: WorkspaceItem[], item) => {
+      const existingElement = acc.find(
+        element => element.atomicNumber === item.atomicNumber
+      );
+
+      if (existingElement) {
+        existingElement.amount += item.amount;
+      } else {
+        acc.push(structuredClone(item));
+      }
+
+      itemIds.push(item.id);
+
+      return acc;
+    }, [])
+  );
+
+  return { currentRecipes: normalizedRecipes, itemIds };
+}
 
 export function WorkspaceArea() {
   const { launchNotification } = useNotification();
@@ -42,40 +90,27 @@ export function WorkspaceArea() {
   );
 
   const onJoinElements = useCallback(
-    (overlapsElements: [WorkspaceItem, WorkspaceItem][]) => {
-      overlapsElements.forEach(([elementTarget, elementOverlap]) => {
-        const firstElement = elements.find(
-          element => element.atomicNumber === elementTarget.atomicNumber
-        );
-        const secondElement = elements.find(
-          element => element.atomicNumber === elementOverlap.atomicNumber
-        );
+    ({ currentRecipes, itemIds }: JoinElementsProps) => {
+      for (const currentRecipe of currentRecipes) {
+        const mappedRecipe = currentRecipe
+          .map(item => ({
+            atomicNumber: item.atomicNumber,
+            amount: item.amount,
+          }))
+          .sort((a, b) => a.atomicNumber - b.atomicNumber);
 
-        if (!firstElement || !secondElement) return;
-
-        const firstSymbols = Array(elementTarget.amount)
-          .fill(0)
-          .map(() => firstElement.symbol);
-        const secondSymbols = Array(elementOverlap.amount)
-          .fill(0)
-          .map(() => secondElement.symbol);
-
-        const joinedSymbols = [...firstSymbols, ...secondSymbols].sort((a, b) =>
-          a.localeCompare(b)
+        const discoveredRecipe = recipes.find(recipe =>
+          isEqual(recipe.inputs, mappedRecipe)
         );
 
-        const recipe = recipes.find(recipe =>
-          isEqual(recipe.inputs, joinedSymbols)
-        );
+        if (discoveredRecipe) {
+          itemIds.forEach(id => removeWorkspaceItem(id));
 
-        if (recipe) {
-          removeWorkspaceItem(elementTarget.id);
-          removeWorkspaceItem(elementOverlap.id);
-
-          addRecipe(recipe as RecipeProps);
+          addRecipe(discoveredRecipe as RecipeProps);
           launchNotification();
+          return;
         }
-      });
+      }
     },
     [removeWorkspaceItem, addRecipe, launchNotification]
   );
@@ -128,7 +163,7 @@ export function WorkspaceArea() {
       }
     }
 
-    onJoinElements(overlaps);
+    onJoinElements(getCurrentRecipesFromOverlaps(overlaps));
   }, [workspaceItems, isOverlapping, onJoinElements]);
 
   return (

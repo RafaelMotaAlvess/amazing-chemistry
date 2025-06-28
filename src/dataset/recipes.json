@@ -1,105 +1,156 @@
 {
   "recipes": [
     {
-      "inputs": ["H", "H", "O"],
+      "inputs": [
+        { "atomicNumber": 1, "amount": 2 },
+        { "atomicNumber": 8, "amount": 1 }
+      ],
       "result": {
         "name": "Água",
         "formula": "H2O"
       }
     },
     {
-      "inputs": ["C", "O", "O"],
+      "inputs": [
+        { "atomicNumber": 6, "amount": 1 },
+        { "atomicNumber": 8, "amount": 2 }
+      ],
       "result": {
         "name": "Gás Carbônico",
         "formula": "CO2"
       }
     },
     {
-      "inputs": ["Cl", "Na"],
+      "inputs": [
+        { "atomicNumber": 11, "amount": 1 },
+        { "atomicNumber": 17, "amount": 1 }
+      ],
       "result": {
         "name": "Cloreto de sódio",
         "formula": "NaCl"
       }
     },
     {
-      "inputs": ["Br", "K"],
+      "inputs": [
+        { "atomicNumber": 19, "amount": 1 },
+        { "atomicNumber": 35, "amount": 1 }
+      ],
       "result": {
         "name": "Brometo de potássio",
         "formula": "KBr"
       }
     },
     {
-      "inputs": ["Ca", "F", "F"],
+      "inputs": [
+        { "atomicNumber": 9, "amount": 2 },
+        { "atomicNumber": 20, "amount": 1 }
+      ],
       "result": {
         "name": "Fluoreto de cálcio",
         "formula": "CaF2"
       }
     },
     {
-      "inputs": ["Cl", "Cl", "Mg"],
+      "inputs": [
+        { "atomicNumber": 12, "amount": 1 },
+        { "atomicNumber": 17, "amount": 2 }
+      ],
       "result": {
         "name": "Cloreto de magnésio",
         "formula": "MgCl2"
       }
     },
     {
-      "inputs": ["Cl", "H"],
+      "inputs": [
+        { "atomicNumber": 1, "amount": 1 },
+        { "atomicNumber": 17, "amount": 1 }
+      ],
       "result": {
         "name": "Ácido clorídrico",
         "formula": "HCl"
       }
     },
     {
-      "inputs": ["F", "H"],
+      "inputs": [
+        { "atomicNumber": 1, "amount": 1 },
+        { "atomicNumber": 9, "amount": 1 }
+      ],
       "result": {
         "name": "Ácido fluorídrico",
         "formula": "HF"
       }
     },
     {
-      "inputs": ["H", "H", "S"],
+      "inputs": [
+        { "atomicNumber": 1, "amount": 2 },
+        { "atomicNumber": 16, "amount": 1 }
+      ],
       "result": {
         "name": "Sulfeto de hidrogênio",
         "formula": "H2S"
       }
     },
     {
-      "inputs": ["Ca", "H", "H", "O", "O"],
+      "inputs": [
+        { "atomicNumber": 1, "amount": 2 },
+        { "atomicNumber": 8, "amount": 2 },
+        { "atomicNumber": 20, "amount": 1 }
+      ],
       "result": {
         "name": "Hidróxido de cálcio",
         "formula": "Ca(OH)2"
       }
     },
     {
-      "inputs": ["H", "H", "Mg", "O", "O"],
+      "inputs": [
+        { "atomicNumber": 1, "amount": 2 },
+        { "atomicNumber": 8, "amount": 2 },
+        { "atomicNumber": 12, "amount": 1 }
+      ],
       "result": {
         "name": "Hidróxido de magnésio",
         "formula": "Mg(OH)2"
       }
     },
     {
-      "inputs": ["H", "K", "O"],
+      "inputs": [
+        { "atomicNumber": 1, "amount": 1 },
+        { "atomicNumber": 8, "amount": 1 },
+        { "atomicNumber": 19, "amount": 1 }
+      ],
       "result": {
         "name": "Hidróxido de potássio",
         "formula": "KOH"
       }
     },
     {
-      "inputs": ["Na", "Na", "O", "O", "O", "O", "S"],
+      "inputs": [
+        { "atomicNumber": 8, "amount": 4 },
+        { "atomicNumber": 11, "amount": 2 },
+        { "atomicNumber": 16, "amount": 1 }
+      ],
       "result": {
         "name": "Sulfato de sódio",
         "formula": "Na2SO4"
       }
     },
     {
-      "inputs": ["K", "K", "O", "O", "O", "O", "S"],
+      "inputs": [
+        { "atomicNumber": 8, "amount": 4 },
+        { "atomicNumber": 16, "amount": 1 },
+        { "atomicNumber": 19, "amount": 2 }
+      ],
       "result": {
         "name": "Sulfato de potássio",
         "formula": "K2SO4"
       }
     },
     {
-      "inputs": ["C", "Ca", "O", "O", "O"],
+      "inputs": [
+        { "atomicNumber": 6, "amount": 1 },
+        { "atomicNumber": 8, "amount": 3 },
+        { "atomicNumber": 20, "amount": 1 }
+      ],
       "result": {
         "name": "Carbonato de cálcio",
         "formula": "CaCO3"

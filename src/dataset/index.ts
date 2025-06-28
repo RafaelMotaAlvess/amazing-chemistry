@@ -25,7 +25,7 @@ export type Molecule =
   | 'CaCO3';
 
 export interface RecipeProps {
-  inputs: string[];
+  inputs: Array<{ atomicNumber: number; amount: number }>;
   result: {
     name: string;
     formula: Molecule;
