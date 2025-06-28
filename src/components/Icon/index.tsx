@@ -3,11 +3,12 @@ import {
   QuestionMarkIcon,
   TrophyIcon,
   XIcon,
+  MinusIcon,
   type IconProps as PhosphorIconProps,
 } from '@phosphor-icons/react';
 import { theme } from '../../theme.css';
 
-type IconName = 'trophy' | 'close' | 'question-mark';
+type IconName = 'trophy' | 'close' | 'question-mark' | 'minus';
 
 interface IconProps {
   name: IconName;
@@ -28,6 +29,7 @@ export function Icon({
   const icons: Record<IconName, JSX.Element> = {
     trophy: <TrophyIcon {...commonIconProps} />,
     close: <XIcon {...commonIconProps} />,
+    minus: <MinusIcon {...commonIconProps} />,
     'question-mark': <QuestionMarkIcon {...commonIconProps} />,
   };
 
