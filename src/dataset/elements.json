@@ -113,6 +113,30 @@
       "name": "Selênio",
       "atomicNumber": 34,
       "family": "ametal"
+    },
+    {
+      "symbol": "Cl",
+      "name": "Cloro",
+      "atomicNumber": 17,
+      "family": "halogenio"
+    },
+    {
+      "symbol": "Br",
+      "name": "Bromo",
+      "atomicNumber": 35,
+      "family": "halogenio"
+    },
+    {
+      "symbol": "K",
+      "name": "Potássio",
+      "atomicNumber": 19,
+      "family": "metal_alcalino"
+    },
+    {
+      "symbol": "F",
+      "name": "Flúor",
+      "atomicNumber": 9,
+      "family": "halogenio"
     }
   ]
 }
