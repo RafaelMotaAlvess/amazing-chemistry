@@ -127,12 +127,6 @@
       "family": "halogenio"
     },
     {
-      "symbol": "K",
-      "name": "Potássio",
-      "atomicNumber": 19,
-      "family": "metal_alcalino"
-    },
-    {
       "symbol": "F",
       "name": "Flúor",
       "atomicNumber": 9,
