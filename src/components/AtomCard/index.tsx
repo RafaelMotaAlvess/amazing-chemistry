@@ -88,7 +88,6 @@ export function AtomCard({
         type='button'
         ref={buttonRef}
         title={name}
-        draggable={!isLocked}
         className={buttonStyle}
         onClick={onSelection}
         onContextMenu={onPutWorkspace}
