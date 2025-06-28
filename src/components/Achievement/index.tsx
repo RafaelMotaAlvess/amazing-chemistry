@@ -23,10 +23,10 @@ function moleculeToComponent(molecule: Molecule): React.JSX.Element {
     <span>
       {texts.map((text, index) => {
         return (
-          <>
-            <span key={text + (numbers[index] ?? "")}>{text}</span>
+          <span key={text + (numbers[index] ?? "")}>
+            <span>{text}</span>
             <sub>{numbers[index]}</sub>
-          </>
+          </span>
         );
       })}
     </span>

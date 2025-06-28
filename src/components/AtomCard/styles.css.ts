@@ -2,6 +2,12 @@ import { style } from '@vanilla-extract/css';
 import { theme } from '../../theme.css';
 
 export const container = style({
+  position: 'relative',
+
+  display: 'flex',
+});
+
+export const button = style({
   width: 92,
   height: 92,
 
@@ -16,7 +22,6 @@ export const container = style({
 
   color: theme.color.dark.text.secondary,
 
-  cursor: 'pointer',
   outline: 'none',
 
   filter: theme.effect.dropShadow.default,
@@ -70,4 +75,66 @@ export const badgeWrapper = style({
 
   width: 'auto',
   height: 'auto',
+});
+
+export const badge = style({
+  position: 'relative',
+
+  display: 'flex',
+
+  width: 24,
+  height: 24,
+
+  justifyContent: 'center',
+  alignItems: 'center',
+
+  border: `1px solid ${theme.color.dark['1']}`,
+
+  backgroundColor: theme.color.dark['2'],
+
+  borderRadius: 9999,
+});
+
+export const badgeSelections = style({
+  fontSize: 14,
+  fontWeight: 200,
+
+  color: theme.color.dark.text.primary,
+});
+
+export const minusButton = style({
+  position: 'absolute',
+  bottom: -12,
+  right: -12,
+
+  display: 'flex',
+
+  width: 24,
+  height: 24,
+
+  justifyContent: 'center',
+  alignItems: 'center',
+
+  filter: theme.effect.dropShadow.default,
+
+  cursor: 'pointer',
+  outline: 'none',
+
+  border: `1px solid ${theme.color.dark['1']}`,
+
+  backgroundColor: theme.color.dark['2'],
+
+  borderRadius: 9999,
+
+  ':hover': {
+    opacity: 0.9,
+  },
+
+  selectors: {
+    '&:hover': {
+      scale: 1.1,
+    },
+  },
+
+  transition: 'scale 0.2s ease-in-out, opacity 0.2s ease-in-out',
 });

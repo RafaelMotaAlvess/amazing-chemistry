@@ -50,7 +50,7 @@ export function Sidebar() {
         <p className={helpPopoverText}>
           •{' '}
           <span className={helpButtonBoldText}>Clique com o botão direito</span>{' '}
-          do mouse no elemento para diminuir sua quantidade.
+          do mouse para selecionar o elemento para a área de trabalho.
         </p>
         <p className={helpPopoverText}>
           • <span className={helpButtonBoldText}>Arraste</span> o elemento para

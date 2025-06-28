@@ -110,6 +110,7 @@ export function WorkspaceArea() {
             atomicNumber={atomicNumber}
             amount={amount}
             isLocked
+            isDraggable
           />
         </Rnd>
       );
