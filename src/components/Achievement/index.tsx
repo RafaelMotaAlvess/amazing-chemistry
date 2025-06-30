@@ -1,12 +1,20 @@
 import {
+  LOCKED,
+  WATER,
+  CARBON_DIOXIDE,
+  SODIUM_CHLORIDE,
+  POTASSIUM_BROMIDE,
+  MAGNESIUM_CHLORIDE,
   CALCIUM_FLUORIDE,
   HYDROCHLORIC_ACID,
-  LOCKED,
-  MAGNESIUM_CHLORIDE,
-  POTASSIUM_BROMIDE,
-  SALT,
-  SMOKE,
-  WATER,
+  HYDROFLUORIC_ACID,
+  HYDROGEN_SULFIDE,
+  CALCIUM_HYDROXIDE,
+  MAGNESIUM_HYDROXIDE,
+  POTASSIUM_HYDROXIDE,
+  SODIUM_SULFATE,
+  POTASSIUM_SULFATE,
+  CALCIUM_CARBONATE,
 } from "../../assets";
 import type { Molecule } from "../../dataset";
 import { container, image, molecule as moleculeStyle } from "./styles.css";
@@ -37,19 +45,20 @@ function moleculeToComponent(molecule: Molecule): React.JSX.Element {
 export function Achievement({ molecule, isLocked = true }: AchievementProps) {
   const images: Record<Molecule, string> = {
     H2O: WATER,
-    CO2: SMOKE,
-    NaCl: SALT,
+    CO2: CARBON_DIOXIDE,
+    NaCl: SODIUM_CHLORIDE,
     KBr: POTASSIUM_BROMIDE,
     CaF2: CALCIUM_FLUORIDE,
     MgCl2: MAGNESIUM_CHLORIDE,
     HCl: HYDROCHLORIC_ACID,
-    H2S: "",
-    "Ca(OH)2": "",
-    "Mg(OH)2": "",
-    KOH: "",
-    Na2SO4: "",
-    K2SO4: "",
-    CaCO3: "",
+    HF: HYDROFLUORIC_ACID,
+    H2S: HYDROGEN_SULFIDE,
+    "Ca(OH)2": CALCIUM_HYDROXIDE,
+    "Mg(OH)2": MAGNESIUM_HYDROXIDE,
+    KOH: POTASSIUM_HYDROXIDE,
+    Na2SO4: SODIUM_SULFATE,
+    K2SO4: POTASSIUM_SULFATE,
+    CaCO3: CALCIUM_CARBONATE,
   };
 
   const label = isLocked ? "Bloqueado" : images[molecule];
@@ -63,9 +72,9 @@ export function Achievement({ molecule, isLocked = true }: AchievementProps) {
         title={label}
       />
 
-      {!isLocked && (
+      {/* {!isLocked && (
         <span className={moleculeStyle}>{moleculeToComponent(molecule)}</span>
-      )}
+      )} */}
     </div>
   );
 }
