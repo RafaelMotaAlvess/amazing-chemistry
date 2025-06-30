@@ -16,6 +16,7 @@ export type Molecule =
   | 'CaF2'
   | 'MgCl2'
   | 'HCl'
+  | 'HF'
   | 'H2S'
   | 'Ca(OH)2'
   | 'Mg(OH)2'
@@ -24,12 +25,19 @@ export type Molecule =
   | 'K2SO4'
   | 'CaCO3';
 
+export interface RecipeInputsProps {
+  atomicNumber: number;
+  amount: number;
+}
+
+export interface RecipeResultProps {
+  name: string;
+  formula: Molecule;
+}
+
 export interface RecipeProps {
-  inputs: Array<{ atomicNumber: number; amount: number }>;
-  result: {
-    name: string;
-    formula: Molecule;
-  };
+  inputs: RecipeInputsProps[];
+  result: RecipeResultProps;
 }
 
 export { elements, recipes };

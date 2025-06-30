@@ -78,7 +78,7 @@ function getCurrentRecipesFromOverlaps(
 export function WorkspaceArea() {
   const { launchNotification } = useNotification();
   const { addRecipe } = useRecipes();
-  const { isOpen: isSidebarOpen } = useSidebar(); 
+  const { isOpen: isSidebarOpen } = useSidebar();
   const { workspaceItems, updatePosition, removeWorkspaceItem } =
     useWorkspace();
 
@@ -122,7 +122,7 @@ export function WorkspaceArea() {
       const { x, y } = data;
 
       if (isSidebarOpen) {
-        const sidebarWidth = 472; 
+        const sidebarWidth = 472;
         const droppableAreaX = window.innerWidth - sidebarWidth;
 
         if (x + ATOM_CARD_SIZE / 2 > droppableAreaX) {
