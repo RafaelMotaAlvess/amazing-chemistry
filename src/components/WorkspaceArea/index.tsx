@@ -10,6 +10,7 @@ import {
 import {
   useNotification,
   useRecipes,
+  useSidebar,
   useWorkspace,
   type WorkspaceItem,
 } from '../../hooks';
@@ -77,6 +78,7 @@ function getCurrentRecipesFromOverlaps(
 export function WorkspaceArea() {
   const { launchNotification } = useNotification();
   const { addRecipe } = useRecipes();
+  const { isOpen: isSidebarOpen } = useSidebar(); 
   const { workspaceItems, updatePosition, removeWorkspaceItem } =
     useWorkspace();
 
@@ -119,9 +121,19 @@ export function WorkspaceArea() {
     (id: number, _: RndDragEvent, data: DraggableData) => {
       const { x, y } = data;
 
+      if (isSidebarOpen) {
+        const sidebarWidth = 472; 
+        const droppableAreaX = window.innerWidth - sidebarWidth;
+
+        if (x + ATOM_CARD_SIZE / 2 > droppableAreaX) {
+          removeWorkspaceItem(id);
+          return;
+        }
+      }
+
       updatePosition(id, { x, y });
     },
-    [updatePosition]
+    [isSidebarOpen, removeWorkspaceItem, updatePosition]
   );
 
   const renderedAtoms = useMemo(() => {
