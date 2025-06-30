@@ -16,7 +16,7 @@ export const container = style({
   justifyContent: 'center',
   alignItems: 'center',
 
-  borderRadius: 4,
+  borderRadius: 9999,
   border: `1px solid ${theme.color.dark['1']}`,
 
   backgroundColor: theme.color.dark['2'],
@@ -29,13 +29,11 @@ export const container = style({
 });
 
 export const image = style({
-  width: 24,
-  height: 24,
+  width: '100%',
+  height: '100%',
 });
 
-export const molecule = style({
-  fontSize: 14,
-  fontWeight: 200,
-
-  color: theme.color.dark.text.primary,
+export const locked = style({
+  width: 40,
+  height: 40,
 });

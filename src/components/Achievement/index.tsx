@@ -15,31 +15,13 @@ import {
   SODIUM_SULFATE,
   POTASSIUM_SULFATE,
   CALCIUM_CARBONATE,
-} from "../../assets";
-import type { Molecule } from "../../dataset";
-import { container, image, molecule as moleculeStyle } from "./styles.css";
+} from '../../assets';
+import type { Molecule } from '../../dataset';
+import { container, image, locked } from './styles.css';
 
 interface AchievementProps {
   molecule: Molecule;
   isLocked?: boolean;
-}
-
-function moleculeToComponent(molecule: Molecule): React.JSX.Element {
-  const texts = molecule.split(/\d/).filter(Boolean);
-  const numbers = molecule.split(/\D/).filter(Boolean);
-
-  return (
-    <span>
-      {texts.map((text, index) => {
-        return (
-          <span key={text + (numbers[index] ?? "")}>
-            <span>{text}</span>
-            <sub>{numbers[index]}</sub>
-          </span>
-        );
-      })}
-    </span>
-  );
 }
 
 export function Achievement({ molecule, isLocked = true }: AchievementProps) {
@@ -53,28 +35,24 @@ export function Achievement({ molecule, isLocked = true }: AchievementProps) {
     HCl: HYDROCHLORIC_ACID,
     HF: HYDROFLUORIC_ACID,
     H2S: HYDROGEN_SULFIDE,
-    "Ca(OH)2": CALCIUM_HYDROXIDE,
-    "Mg(OH)2": MAGNESIUM_HYDROXIDE,
+    'Ca(OH)2': CALCIUM_HYDROXIDE,
+    'Mg(OH)2': MAGNESIUM_HYDROXIDE,
     KOH: POTASSIUM_HYDROXIDE,
     Na2SO4: SODIUM_SULFATE,
     K2SO4: POTASSIUM_SULFATE,
     CaCO3: CALCIUM_CARBONATE,
   };
 
-  const label = isLocked ? "Bloqueado" : images[molecule];
+  const label = isLocked ? 'Bloqueado' : images[molecule];
 
   return (
     <div className={container} title={label}>
       <img
-        className={image}
+        className={isLocked ? locked : image}
         src={isLocked ? LOCKED : images[molecule]}
         alt={label}
         title={label}
       />
-
-      {/* {!isLocked && (
-        <span className={moleculeStyle}>{moleculeToComponent(molecule)}</span>
-      )} */}
     </div>
   );
 }
