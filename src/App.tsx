@@ -25,6 +25,7 @@ function App() {
         <Achievement
           key={recipe.result.formula}
           molecule={recipe.result.formula as Molecule}
+          name={recipe.result.name}
           isLocked={isUnlocked}
         />
       );

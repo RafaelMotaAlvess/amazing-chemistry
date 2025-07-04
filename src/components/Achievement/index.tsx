@@ -21,10 +21,15 @@ import { container, image, locked } from './styles.css';
 
 interface AchievementProps {
   molecule: Molecule;
+  name: string;
   isLocked?: boolean;
 }
 
-export function Achievement({ molecule, isLocked = true }: AchievementProps) {
+export function Achievement({
+  molecule,
+  name,
+  isLocked = true,
+}: AchievementProps) {
   const images: Record<Molecule, string> = {
     H2O: WATER,
     CO2: CARBON_DIOXIDE,
@@ -43,7 +48,7 @@ export function Achievement({ molecule, isLocked = true }: AchievementProps) {
     CaCO3: CALCIUM_CARBONATE,
   };
 
-  const label = isLocked ? 'Bloqueado' : images[molecule];
+  const label = isLocked ? 'Bloqueado' : name;
 
   return (
     <div className={container} title={label}>
